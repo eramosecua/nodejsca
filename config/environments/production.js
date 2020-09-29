@@ -1,7 +1,7 @@
 module.exports = {
   PORT: process.env.PORT,
   DB: {
-    user: 'mysql',
+    username: 'mysql',
     password: 'secret',
     database: 'school_prod',
     host: 'localhost',

@@ -1,9 +1,9 @@
 module.exports = {
   PORT: 5000,
   DB: {
-    user: 'mysql',
-    password: 'secret',
-    database: 'school_prod',
+    username: 'root',
+    password: 'md5pgprsa',
+    database: 'school_dev',
     host: 'localhost',
     dialect: 'mysql'
   }
