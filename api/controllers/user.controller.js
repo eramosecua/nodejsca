@@ -42,7 +42,6 @@ class UserController {
     const { id } = req.params;
 
     await this._userService.updateUser(id, body);
-    const user = mapper(UserDto, createdUser);
 
     return res.status(204).send();
   }

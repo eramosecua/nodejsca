@@ -18,6 +18,8 @@ class UserBusiness {
     
   }
 
+
+
   async createUser(user) {
     user = mapper(User, user);
     const createdUser = await this._userRepository.createUser(user);
@@ -25,13 +27,14 @@ class UserBusiness {
   }
 
   async updateUser(id, user) {
+    user.id = id;
     user = mapper(User, user);
     const updatedUser = await this._userRepository.updateUser(id, user);
     return mapper(User, updatedUser);
   }
 
   async deleteUser(id) {
-    return await this._userRepository.deleteUSer(id);
+    return await this._userRepository.deleteUser(id);
   }
 }
 
