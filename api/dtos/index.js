@@ -1,3 +1,6 @@
 module.exports = {
-  UserDto: require('./user.dto')
+  CourseDto: require('./course.dto'),
+  StudentDto: require("./student.dto"),
+  TeacherDto: require("./teacher.dto"),
+  SubjectDto: require("./subject.dto")
 }

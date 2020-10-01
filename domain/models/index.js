@@ -1,3 +1,6 @@
 module.exports = {
-  User: require('./user')
+  Course: require('./course'),
+  Student: require("./student"),
+  Teacher: require('./teacher'),
+  Subject: require('./subject')
 }

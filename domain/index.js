@@ -1,3 +1,6 @@
 module.exports = {
-    UserBusiness: require('./user.business')
+    CourseBusiness: require('./course.business'),
+    StudentBusiness: require("./student.business"),
+    TeacherBusiness: require("./teacher.business"),
+    SubjectBusiness: require("./subject.business")
 }

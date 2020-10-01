@@ -1,3 +1,6 @@
 module.exports = {
-  UserRepository: require('./user.repository')
+  CourseRepository: require('./course.repository'),
+  TeacherRepository: require('./teacher.repository'),
+  StudentRepository: require("./student.repository"),
+  SubjectRepository: require("./subject.repository")
 }

@@ -1,3 +1,6 @@
 module.exports = {
-  UserService: require('./user.service')
+  CourseService: require('./course.service'),
+  StudentService: require("./student.service"),
+  TeacherService: require("./teacher.service"),
+  SubjectService: require("./subject.service"),
 }
