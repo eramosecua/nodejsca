@@ -12,7 +12,7 @@ const config = require("../config/environments");
 const { UserService } = require('../services');
 const { UserRepository } = require('../dal/repositories');
 const db = require('../dal/entities');
-
+const { UserBusiness } = require('../domain');
 
 const container = createContainer();
 
@@ -39,6 +39,9 @@ container
   })
   .register({
     db: asValue(db)
+  })
+  .register({
+    UserBusiness: asClass(UserBusiness).singleton()
   })
   ;
 

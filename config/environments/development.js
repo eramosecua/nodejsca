@@ -5,6 +5,7 @@ module.exports = {
     password: 'md5pgprsa',
     database: 'school_dev',
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    logging: false
   }
 }
