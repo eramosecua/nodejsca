@@ -1,7 +1,13 @@
 class Subject {
+  constructor(){
+    this._sections = [];
+  }
     id = 0;
     name = '';
-    status = null;
+
+    addSection(section){
+      this._sections.push(section);
+    }
   }
   
   module.exports = Subject;

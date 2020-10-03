@@ -22,7 +22,7 @@ class TeacherController {
     }
     teacher = mapper(TeacherDto, teacher);
     return res.send({
-      payload: teacher
+      payload: teacher 
     });
   }
 
