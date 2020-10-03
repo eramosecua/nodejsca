@@ -1,12 +1,12 @@
 class Subject {
   constructor(){
-    this._sections = [];
+    this.sections = [];
   }
     id = 0;
     name = '';
 
     addSection(section){
-      this._sections.push(section);
+      this.sections.push(section);
     }
   }
   
