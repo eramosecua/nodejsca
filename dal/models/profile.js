@@ -4,22 +4,18 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Profile extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate(models) {
-      this.hasMany(models.Permission, {
-        foreignKey: 'profileId',
-        as: 'permissions'
-      });
+      // define association here
     }
   };
   Profile.init({
     name: DataTypes.STRING,
-    active: DataTypes.BOOLEAN,
-    id: {
-      primaryKey: true,
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4
-    }
-    
+    active: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Profile',

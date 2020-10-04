@@ -4,32 +4,20 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Operation extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate(models) {
-      this.hasMany(models.Operation, {
-        foreignKey: 'parentId',
-        as: 'children'
-      });
-      this.belongsTo(models.Operation);
-      this.hasOne(models.Option)
+      // define association here
     }
   };
   Operation.init({
     name: DataTypes.STRING,
+    parentId: DataTypes.STRING,
     active: DataTypes.BOOLEAN,
-    id: {
-      primaryKey: true,
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4
-    },
-    parentId: {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4
-    },
-    optionId: {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4
-    },
-    
+    optionId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Operation',
