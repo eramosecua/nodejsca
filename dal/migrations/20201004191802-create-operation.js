@@ -3,22 +3,32 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Operations', {
       id: {
-        allowNull: false,
-        autoIncrement: true,
+        type: Sequelize.UUID,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        allowNull: false,
+        defaultValue: Sequelize.UUIDV4,
       },
       name: {
         type: Sequelize.STRING
       },
       parentId: {
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Operations',
+          key: 'id'
+        }
       },
       active: {
         type: Sequelize.BOOLEAN
       },
       optionId: {
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Options',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

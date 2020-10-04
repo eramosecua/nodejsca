@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasOne(models.User);
+      this.hasOne(models.Profile);
     }
   };
   UserProfile.init({

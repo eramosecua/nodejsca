@@ -3,16 +3,28 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Permissions', {
       id: {
-        allowNull: false,
-        autoIncrement: true,
+        type: Sequelize.UUID,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        allowNull: false,
+        defaultValue: Sequelize.UUIDV4,
       },
       operationId: {
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        onCreate: 'CASCADE',
+        references: {
+          model: 'Operations',
+          key: 'id'
+        }
       },
       profileId: {
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        onCreate: 'CASCADE',
+        references: {
+          model: 'Profiles',
+          key: 'id'
+        }
       },
       active: {
         type: Sequelize.BOOLEAN
