@@ -1,7 +1,8 @@
 class User {
-  id = 0;
-  name = '';
-  lastname = '';
+  id = '';
+  username = '';
+  paswordHash = '';
+  active = true;
 }
 
 module.exports = User;
