@@ -15,14 +15,44 @@ const CourseRoutes = require('../api/routes/course.route');
 const StudentRoutes = require('../api/routes/student.route');
 const TeacherRoutes = require('../api/routes/teacher.route');
 const SubjectRoutes = require('../api/routes/subject.route');
+const UserRoutes = require('../api/routes/user.route');
+const ProfileRoutes = require('../api/routes/profile.route');
 
-const {CourseController, StudentController, TeacherController, SubjectController} = require('../api/controllers');
+const {
+  CourseController, 
+  StudentController, 
+  TeacherController, 
+  SubjectController, 
+  UserController,
+  ProfileController
+} = require('../api/controllers');
 
-const { CourseService, StudentService, TeacherService, SubjectService  } = require('../services');
+const { 
+  CourseService, 
+  StudentService, 
+  TeacherService, 
+  SubjectService, 
+  UserService,
+  ProfileService
+} = require('../services');
 
-const { CourseRepository, StudentRepository, TeacherRepository, SubjectRepository } = require('../dal/repositories');
+const { 
+  CourseRepository, 
+  StudentRepository, 
+  TeacherRepository, 
+  SubjectRepository,
+  UserRepository,
+  ProfileRepository
+} = require('../dal/repositories');
 
-const { CourseBusiness, StudentBusiness, TeacherBusiness, SubjectBusiness } = require('../domain');
+const { 
+  CourseBusiness, 
+  StudentBusiness, 
+  TeacherBusiness, 
+  SubjectBusiness,
+  UserBusiness,
+  ProfileBusiness
+} = require('../domain');
 
 const container = createContainer();
 
@@ -36,7 +66,9 @@ container
     CourseController: asClass(CourseController).singleton(),
     StudentController: asClass(StudentController).singleton(),
     TeacherController: asClass(TeacherController).singleton(),
-    SubjectController: asClass(SubjectController).singleton()
+    SubjectController: asClass(SubjectController).singleton(),
+    UserController: asClass(UserController).singleton(),
+    ProfileController: asClass(ProfileController).singleton()
   })
   .register({
     config: asValue(config)
@@ -45,19 +77,25 @@ container
     CourseRoutes: asFunction(CourseRoutes).singleton(),
     StudentRoutes: asFunction(StudentRoutes).singleton(),
     TeacherRoutes: asFunction(TeacherRoutes).singleton(),
-    SubjectRoutes: asFunction(SubjectRoutes).singleton()
+    SubjectRoutes: asFunction(SubjectRoutes).singleton(),
+    UserRoutes: asFunction(UserRoutes).singleton(),
+    ProfileRoutes: asFunction(ProfileRoutes).singleton()
   })
   .register({
     CourseService: asClass(CourseService).singleton(),
     StudentService: asClass(StudentService).singleton(),
     TeacherService: asClass(TeacherService).singleton(),
-    SubjectService: asClass(SubjectService).singleton()
+    SubjectService: asClass(SubjectService).singleton(),
+    UserService: asClass(UserService).singleton(),
+    ProfileService: asClass(ProfileService).singleton()
   })
   .register({
     CourseRepository: asClass(CourseRepository).singleton(),
     StudentRepository: asClass(StudentRepository).singleton(),
     TeacherRepository: asClass(TeacherRepository).singleton(),
-    SubjectRepository: asClass(SubjectRepository).singleton()
+    SubjectRepository: asClass(SubjectRepository).singleton(),
+    UserRepository: asClass(UserRepository).singleton(),
+    ProfileRepository: asClass(ProfileRepository).singleton()
   })
   .register({
     db: asValue(db)
@@ -66,7 +104,9 @@ container
     CourseBusiness: asClass(CourseBusiness).singleton(),
     StudentBusiness: asClass(StudentBusiness).singleton(),
     TeacherBusiness: asClass(TeacherBusiness).singleton(),
-    SubjectBusiness: asClass(SubjectBusiness).singleton()
+    SubjectBusiness: asClass(SubjectBusiness).singleton(),
+    UserBusiness: asClass(UserBusiness).singleton(),
+    ProfileBusiness: asClass(ProfileBusiness).singleton()
   })
   ;
 

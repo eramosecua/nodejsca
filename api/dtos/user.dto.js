@@ -1,7 +1,6 @@
 class UserDto {
-  id = 0;
-  name = '';
-  lastname = '';
+  id = '';
+  username = '';
 }
 
 module.exports = UserDto;

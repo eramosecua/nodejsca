@@ -7,7 +7,11 @@ module.exports = ({
   CourseRoutes, 
   StudentRoutes, 
   TeacherRoutes,
-  SubjectRoutes}) => {
+  SubjectRoutes, 
+  UserRoutes,
+  ProfileRoutes
+
+}) => {
     
     const router = Router();
     const apiRoute = Router();
@@ -21,6 +25,8 @@ module.exports = ({
     apiRoute.use('/student', StudentRoutes);
     apiRoute.use('/teacher', TeacherRoutes);
     apiRoute.use('/subject', SubjectRoutes);
+    apiRoute.use('/user', UserRoutes);
+    apiRoute.use('/profile', ProfileRoutes);
 
     router.use('/api', apiRoute)
 

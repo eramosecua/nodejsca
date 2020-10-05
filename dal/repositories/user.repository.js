@@ -1,28 +1,9 @@
-class UserRepository {
+const BaseRepository = require('./base.repository');
+
+class UserRepository extends BaseRepository {
   constructor({db}){
-    this._db = db;
+    super(db, 'User')
   }
-
-  getUsers(){
-    return this._db.users.findAll();
-  }
-
-  getUser(id){
-    return this._db.users.findOne({where: {id}});
-  }
-
-  createUser(user){
-    return this._db.users.create(user);
-  }
-
-  updateUser(id, user){
-    return this._db.users.update(user, {where: {id}});
-  }
-
-  deleteUser(id){
-    return this._db.users.destroy({where: {id}});
-  }
-
 }
 
 module.exports = UserRepository

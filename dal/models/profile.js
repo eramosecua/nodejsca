@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Permission, {
-        foreignKey: 'profileId',
-        as: 'permissions'
-      });
+      // this.hasMany(models.Permission, {
+      //   foreignKey: 'profileId',
+      //   as: 'permissions'
+      // });
     }
   };
   Profile.init({

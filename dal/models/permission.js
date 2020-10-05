@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasOne(models.Operation);
-      this.hasOne(models.Profile);
+      //this.hasOne(models.Profile);
     }
   };
   Permission.init({

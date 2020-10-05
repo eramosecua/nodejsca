@@ -8,19 +8,23 @@ class UserController {
   }
 
   async getUsers(req, res) {
-    let users = await this._userService.getUsers();
+    let users = await this._userService.getAll();
     users = users.map(user => mapper(UserDto, user));
 
     return res.send({
-      payload: users
+      payload: users || []
     });
   }
 
   async getUser(req, res){
     const { id } = req.params;
-    let user = await this._userService.getUser(id);
-    user = mapper(UserDto, user);
+    let user = await this._userService.get(id);
 
+    if(!user) {
+      return res.status(404).send();
+    }
+
+    user = mapper(UserDto, user);
     return res.send({
       payload: user
     })
@@ -29,7 +33,7 @@ class UserController {
 
   async createUsers(req, res) {
     const { body } = req;
-    const createdUser = await this._userService.createUser(body);
+    const createdUser = await this._userService.create(body);
     const user = mapper(UserDto, createdUser);
 
     return res.status(201).send({
@@ -41,16 +45,15 @@ class UserController {
     const { body } = req;
     const { id } = req.params;
 
-    await this._userService.updateUser(id, body);
+    await this._userService.update(id, body);
 
     return res.status(204).send();
   }
 
   async deleteUser(req, res){
     const { id } = req.params;
-    const { body } = req;
 
-    await this._userService.deleteUser(id, body);
+    await this._userService.delete(id);
     
     return res.status(204).send();
   }
