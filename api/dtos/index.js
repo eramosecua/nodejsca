@@ -5,5 +5,6 @@ module.exports = {
   SubjectDto: require("./subject.dto"),
   UserDto: require("./user.dto"),
   ProfileDto: require("./profile.dto"),
-  UserProfileDto: require("./user_profile.dto")
+  UserProfileDto: require("./user_profile.dto"),
+  OptionDto: require("./option.dto")
 }

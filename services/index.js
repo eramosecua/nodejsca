@@ -5,5 +5,6 @@ module.exports = {
   SubjectService: require("./subject.service"),
   UserService: require("./user.service"),
   ProfileService: require("./profile.service"),
-  UserProfileService: require("./user_profile.service")
+  UserProfileService: require("./user_profile.service"),
+  OptionService: require("./option.service")
 }

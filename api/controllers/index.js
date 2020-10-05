@@ -5,5 +5,6 @@ module.exports = {
   SubjectController: require("./subject.controller"),
   UserController: require("./user.controller"),
   ProfileController: require("./profile.controller"),
-  UserProfileController: require("./user_profile.controller")
+  UserProfileController: require("./user_profile.controller"),
+  OptionController: require("./option.controller")
 }
