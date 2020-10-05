@@ -1,7 +1,7 @@
 class User {
   id = '';
   username = '';
-  paswordHash = '';
+  passwordHash = '';
   active = true;
 }
 

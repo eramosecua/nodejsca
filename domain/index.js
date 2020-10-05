@@ -4,5 +4,6 @@ module.exports = {
     TeacherBusiness: require("./teacher.business"),
     SubjectBusiness: require("./subject.business"),
     UserBusiness: require("./user.business"),
-    ProfileBusiness: require("./profile.business")
+    ProfileBusiness: require("./profile.business"),
+    UserProfileBusiness: require("./user_profile.business")
 }

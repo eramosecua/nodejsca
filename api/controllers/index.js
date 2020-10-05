@@ -4,5 +4,6 @@ module.exports = {
   TeacherController: require("./teacher.controller"),
   SubjectController: require("./subject.controller"),
   UserController: require("./user.controller"),
-  ProfileController: require("./profile.controller")
+  ProfileController: require("./profile.controller"),
+  UserProfileController: require("./user_profile.controller")
 }

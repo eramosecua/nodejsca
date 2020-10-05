@@ -1,4 +1,5 @@
 'use strict';
+const { v4: uuidv4 } = require('uuid');
 const {
   Model
 } = require('sequelize');
@@ -15,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey: 'profileId',
       //   as: 'permissions'
       // });
+      this.hasOne(models.UserProfile);
     }
   };
   Profile.init({
@@ -24,5 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Profile',
   });
+
+  Profile.beforeCreate(profile => profile.id = uuidv4());
+
   return Profile;
 };

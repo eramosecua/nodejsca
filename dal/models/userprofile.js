@@ -1,4 +1,5 @@
 'use strict';
+const { v4: uuidv4 } = require('uuid');
 const {
   Model
 } = require('sequelize');
@@ -18,11 +19,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   UserProfile.init({
     userId: DataTypes.STRING,
-    profileId: DataTypes.STRING,
+    profileId: DataTypes.STRING, 
     active: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'UserProfile',
   });
+
+  UserProfile.beforeCreate(userProfile => userProfile.id = uuidv4());
+
   return UserProfile;
 };

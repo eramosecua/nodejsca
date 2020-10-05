@@ -4,7 +4,7 @@ module.exports = {
   StudentRepository: require("./student.repository"),
   SubjectRepository: require("./subject.repository"),
   UserRepository: require("./user.repository"),
-  ProfileRepository: require('./profile.repository')
-
+  ProfileRepository: require('./profile.repository'),
+  UserProfileRepository: require('./user_profile.repository')
 }
 
